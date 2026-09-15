@@ -1,0 +1,249 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <style>
+    body { margin: 0; background: #FAF9F7; font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif; }
+    a { color: #DC4A38; } a:hover { color: #B23A2C; }
+    .mono { font-family: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace; }
+  </style>
+</helmet>
+
+<div style="width: 1100px; box-sizing: border-box; padding: 64px; background: #FAF9F7; color: #171A1F; display: flex; flex-direction: column; gap: 56px;">
+
+  <!-- ─── header ─── -->
+  <div style="display: flex; flex-direction: column; gap: 10px;">
+    <div class="mono" style="font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #8A8F98;">Screen2Prompt · identity</div>
+    <div style="display: flex; align-items: baseline; gap: 16px;">
+      <h1 style="margin: 0; font-size: 46px; font-weight: 600; letter-spacing: -0.025em;">Aperture</h1>
+      <span class="mono" style="font-size: 13px; color: #8A8F98;">direction 1 — leading</span>
+    </div>
+    <p style="margin: 0; max-width: 620px; font-size: 15px; line-height: 1.55; color: #5C616B; text-wrap: pretty;">A screen, a voice turning into lines of text, and the record marker breaking the frame. The marker is the product's whole idea, so it gets to break the geometry.</p>
+  </div>
+
+  <div style="height: 1px; background: #E4E1DC;"></div>
+
+  <!-- ─── the mark ─── -->
+  <div style="display: flex; flex-direction: column; gap: 20px;">
+    <div class="mono" style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #8A8F98;">The mark</div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px;">
+
+      <div style="display: flex; align-items: center; justify-content: center; padding: 44px; background: #FFFFFF; border: 1px solid #E4E1DC; border-radius: 10px;">
+        <svg width="150" height="150" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3.6" y="6.6" width="36.8" height="27.8" rx="5.4" stroke="#171A1F" stroke-width="2.5"/>
+          <g stroke="#171A1F" stroke-width="2.3" stroke-linecap="round">
+            <path d="M10.5 16.8v7.4"/><path d="M14.6 12.6v15.8"/><path d="M18.7 18.4v4.2"/>
+          </g>
+          <g stroke="#171A1F" stroke-width="2.3" stroke-linecap="round" opacity="0.85">
+            <path d="M24.4 15h10.4"/><path d="M24.4 20.5h8"/><path d="M24.4 26h5.4"/>
+          </g>
+          <circle cx="38.4" cy="34.4" r="8.6" fill="#FFFFFF"/>
+          <circle cx="38.4" cy="34.4" r="5.9" fill="#DC4A38"/>
+        </svg>
+      </div>
+
+      <div style="display: flex; align-items: center; justify-content: center; padding: 44px; background: #171A1F; border-radius: 10px;">
+        <svg width="150" height="150" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3.6" y="6.6" width="36.8" height="27.8" rx="5.4" stroke="#FAF9F7" stroke-width="2.5"/>
+          <g stroke="#FAF9F7" stroke-width="2.3" stroke-linecap="round">
+            <path d="M10.5 16.8v7.4"/><path d="M14.6 12.6v15.8"/><path d="M18.7 18.4v4.2"/>
+          </g>
+          <g stroke="#FAF9F7" stroke-width="2.3" stroke-linecap="round" opacity="0.8">
+            <path d="M24.4 15h10.4"/><path d="M24.4 20.5h8"/><path d="M24.4 26h5.4"/>
+          </g>
+          <circle cx="38.4" cy="34.4" r="8.6" fill="#171A1F"/>
+          <circle cx="38.4" cy="34.4" r="5.9" fill="#DC4A38"/>
+        </svg>
+      </div>
+
+      <div style="display: flex; flex-direction: column; justify-content: center; gap: 14px; padding: 32px; background: #FFFFFF; border: 1px solid #E4E1DC; border-radius: 10px;">
+        <div class="mono" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8F98;">Construction</div>
+        <div style="display: flex; flex-direction: column; gap: 9px; font-size: 13px; line-height: 1.5; color: #5C616B;">
+          <div>48&thinsp;px grid, 2.5 stroke, 5.4 corner radius.</div>
+          <div>Three waveform bars left, three text rules right — voice resolving into a document.</div>
+          <div>Record badge sits on the corner at r&thinsp;=&thinsp;5.9 with a 2.7 knockout ring, so it reads on any ground.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ─── lockup ─── -->
+  <div style="display: flex; flex-direction: column; gap: 20px;">
+    <div class="mono" style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #8A8F98;">Lockup</div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px;">
+
+      <div style="display: flex; align-items: center; padding: 40px; background: #FFFFFF; border: 1px solid #E4E1DC; border-radius: 10px;">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <svg width="52" height="52" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3.6" y="6.6" width="36.8" height="27.8" rx="5.4" stroke="#171A1F" stroke-width="2.7"/>
+            <g stroke="#171A1F" stroke-width="2.5" stroke-linecap="round">
+              <path d="M10.5 16.8v7.4"/><path d="M14.6 12.6v15.8"/><path d="M18.7 18.4v4.2"/>
+            </g>
+            <g stroke="#171A1F" stroke-width="2.5" stroke-linecap="round" opacity="0.85">
+              <path d="M24.4 15h10.4"/><path d="M24.4 20.5h8"/><path d="M24.4 26h5.4"/>
+            </g>
+            <circle cx="38.4" cy="34.4" r="8.6" fill="#FFFFFF"/>
+            <circle cx="38.4" cy="34.4" r="5.9" fill="#DC4A38"/>
+          </svg>
+          <div style="font-size: 27px; font-weight: 600; letter-spacing: -0.022em;">Screen<span style="color: #DC4A38;">2</span>Prompt</div>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; padding: 40px; background: #171A1F; border-radius: 10px;">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <svg width="52" height="52" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3.6" y="6.6" width="36.8" height="27.8" rx="5.4" stroke="#FAF9F7" stroke-width="2.7"/>
+            <g stroke="#FAF9F7" stroke-width="2.5" stroke-linecap="round">
+              <path d="M10.5 16.8v7.4"/><path d="M14.6 12.6v15.8"/><path d="M18.7 18.4v4.2"/>
+            </g>
+            <g stroke="#FAF9F7" stroke-width="2.5" stroke-linecap="round" opacity="0.8">
+              <path d="M24.4 15h10.4"/><path d="M24.4 20.5h8"/><path d="M24.4 26h5.4"/>
+            </g>
+            <circle cx="38.4" cy="34.4" r="8.6" fill="#171A1F"/>
+            <circle cx="38.4" cy="34.4" r="5.9" fill="#DC4A38"/>
+          </svg>
+          <div style="font-size: 27px; font-weight: 600; letter-spacing: -0.022em; color: #FAF9F7;">Screen<span style="color: #DC4A38;">2</span>Prompt</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ─── app icon ─── -->
+  <div style="display: flex; flex-direction: column; gap: 20px;">
+    <div class="mono" style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #8A8F98;">App icon</div>
+    <div style="display: flex; align-items: flex-end; gap: 36px; padding: 40px; background: #FFFFFF; border: 1px solid #E4E1DC; border-radius: 10px;">
+
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+        <div style="width: 144px; height: 144px; border-radius: 32px; background: linear-gradient(170deg, #2A2F38 0%, #141720 100%); box-shadow: 0 8px 22px rgba(23,26,31,0.22), inset 0 1px 0 rgba(255,255,255,0.10); display: flex; align-items: center; justify-content: center;">
+          <svg width="92" height="92" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3.6" y="6.6" width="36.8" height="27.8" rx="5.4" stroke="#FAF9F7" stroke-width="2.6"/>
+            <g stroke="#FAF9F7" stroke-width="2.4" stroke-linecap="round">
+              <path d="M10.5 16.8v7.4"/><path d="M14.6 12.6v15.8"/><path d="M18.7 18.4v4.2"/>
+            </g>
+            <g stroke="#FAF9F7" stroke-width="2.4" stroke-linecap="round" opacity="0.72">
+              <path d="M24.4 15h10.4"/><path d="M24.4 20.5h8"/><path d="M24.4 26h5.4"/>
+            </g>
+            <circle cx="38.4" cy="34.4" r="8.6" fill="#1D212A"/>
+            <circle cx="38.4" cy="34.4" r="5.9" fill="#DC4A38"/>
+          </svg>
+        </div>
+        <div class="mono" style="font-size: 11px; color: #8A8F98;">128</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+        <div style="width: 88px; height: 88px; border-radius: 20px; background: linear-gradient(170deg, #2A2F38 0%, #141720 100%); box-shadow: 0 5px 14px rgba(23,26,31,0.20), inset 0 1px 0 rgba(255,255,255,0.10); display: flex; align-items: center; justify-content: center;">
+          <svg width="58" height="58" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3.6" y="6.6" width="36.8" height="27.8" rx="5.4" stroke="#FAF9F7" stroke-width="2.8"/>
+            <g stroke="#FAF9F7" stroke-width="2.6" stroke-linecap="round">
+              <path d="M10.5 16.8v7.4"/><path d="M14.6 12.6v15.8"/><path d="M18.7 18.4v4.2"/>
+            </g>
+            <g stroke="#FAF9F7" stroke-width="2.6" stroke-linecap="round" opacity="0.72">
+              <path d="M24.4 15h10.4"/><path d="M24.4 20.5h8"/><path d="M24.4 26h5.4"/>
+            </g>
+            <circle cx="38.4" cy="34.4" r="8.6" fill="#1D212A"/>
+            <circle cx="38.4" cy="34.4" r="5.9" fill="#DC4A38"/>
+          </svg>
+        </div>
+        <div class="mono" style="font-size: 11px; color: #8A8F98;">80</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+        <div style="width: 52px; height: 52px; border-radius: 12px; background: linear-gradient(170deg, #2A2F38 0%, #141720 100%); box-shadow: 0 3px 8px rgba(23,26,31,0.20); display: flex; align-items: center; justify-content: center;">
+          <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3.6" y="6.6" width="36.8" height="27.8" rx="5.4" stroke="#FAF9F7" stroke-width="3.2"/>
+            <g stroke="#FAF9F7" stroke-width="3" stroke-linecap="round">
+              <path d="M11.5 17.4v6.2"/><path d="M16 13.6v13.8"/><path d="M20.5 18.6v3.8"/>
+            </g>
+            <circle cx="38.4" cy="34.4" r="8.6" fill="#1D212A"/>
+            <circle cx="38.4" cy="34.4" r="5.9" fill="#DC4A38"/>
+          </svg>
+        </div>
+        <div class="mono" style="font-size: 11px; color: #8A8F98;">48</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+        <div style="width: 32px; height: 32px; border-radius: 7px; background: linear-gradient(170deg, #2A2F38 0%, #141720 100%); display: flex; align-items: center; justify-content: center;">
+          <svg width="23" height="23" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="7" width="36" height="27" rx="5.4" stroke="#FAF9F7" stroke-width="4"/>
+            <circle cx="38.4" cy="34.4" r="9.4" fill="#1D212A"/>
+            <circle cx="38.4" cy="34.4" r="6.4" fill="#DC4A38"/>
+          </svg>
+        </div>
+        <div class="mono" style="font-size: 11px; color: #8A8F98;">32</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 8px; padding-left: 12px; max-width: 250px;">
+        <div class="mono" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8F98;">Note</div>
+        <div style="font-size: 13px; line-height: 1.5; color: #5C616B; text-wrap: pretty;">At 48 and below the text rules drop out and the waveform thickens — detail that survives is worth more than detail that's faithful.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ─── palette + type ─── -->
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px;">
+
+    <div style="display: flex; flex-direction: column; gap: 18px; padding: 32px; background: #FFFFFF; border: 1px solid #E4E1DC; border-radius: 10px;">
+      <div class="mono" style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #8A8F98;">Palette</div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <div style="width: 40px; height: 40px; border-radius: 8px; background: #171A1F;"></div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 14px; font-weight: 500;">Ink</div>
+            <div class="mono" style="font-size: 11px; color: #8A8F98;">#171A1F</div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <div style="width: 40px; height: 40px; border-radius: 8px; background: #FAF9F7; border: 1px solid #E4E1DC;"></div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 14px; font-weight: 500;">Paper</div>
+            <div class="mono" style="font-size: 11px; color: #8A8F98;">#FAF9F7</div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <div style="width: 40px; height: 40px; border-radius: 8px; background: #DC4A38;"></div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 14px; font-weight: 500;">Marker</div>
+            <div class="mono" style="font-size: 11px; color: #8A8F98;">#DC4A38 · the only accent</div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <div style="width: 40px; height: 40px; border-radius: 8px; background: #8A8F98;"></div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 14px; font-weight: 500;">Quiet</div>
+            <div class="mono" style="font-size: 11px; color: #8A8F98;">#8A8F98</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 18px; padding: 32px; background: #FFFFFF; border: 1px solid #E4E1DC; border-radius: 10px;">
+      <div class="mono" style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #8A8F98;">Type</div>
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <div style="font-size: 34px; font-weight: 600; letter-spacing: -0.025em;">Space Grotesk</div>
+        <div class="mono" style="font-size: 11px; color: #8A8F98;">wordmark, headings — 500 / 600</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <div class="mono" style="font-size: 25px; font-weight: 400;">IBM Plex Mono</div>
+        <div class="mono" style="font-size: 11px; color: #8A8F98;">labels, hotkeys, timestamps — 400 / 500</div>
+      </div>
+      <div style="display: flex; gap: 8px; padding-top: 4px;">
+        <kbd class="mono" style="font-size: 12px; padding: 5px 9px; border: 1px solid #DAD6D0; border-bottom-width: 2px; border-radius: 6px; background: #FAF9F7;">&#8984;&#8679;R</kbd>
+        <kbd class="mono" style="font-size: 12px; padding: 5px 9px; border: 1px solid #DAD6D0; border-bottom-width: 2px; border-radius: 6px; background: #FAF9F7;">&#8984;&#8679;S</kbd>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

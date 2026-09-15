@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; background: #121310; font-family: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace; }
+    a { color: #E9A13B; } a:hover { color: #C9852B; }
+  </style>
+</helmet>
+
+<div style="width: 1100px; box-sizing: border-box; padding: 56px; background: #121310; color: #E7E4DA; display: flex; flex-direction: column; gap: 32px;">
+
+  <div style="display: flex; flex-direction: column; gap: 10px;">
+    <div style="font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #E9A13B;">direction 2</div>
+    <h1 style="margin: 0; font-size: 36px; font-weight: 600; letter-spacing: -0.02em; color: #F5F2E8;">Signal</h1>
+    <p style="margin: 0; max-width: 660px; font-size: 13px; line-height: 1.6; color: #8E8B80; text-wrap: pretty;">Terminal-native. Hard corners, square caps, phosphor amber. Built for someone who lives in a shell and wants their tools to look like they belong there.</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 300px 1fr 200px; gap: 18px;">
+
+    <div style="display: flex; align-items: center; justify-content: center; padding: 36px; background: #0B0C0A; border: 1px solid #2A2C26; border-radius: 3px;">
+      <svg width="130" height="130" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="#E7E4DA" stroke-width="2.9" stroke-linecap="square">
+          <path d="M6 15V6h9"/><path d="M33 6h9v9"/><path d="M6 33v9h9"/><path d="M42 33v9h-9"/>
+        </g>
+        <g stroke="#E7E4DA" stroke-width="2.9" stroke-linecap="square">
+          <path d="M15 20v8"/><path d="M20 14.5v19"/><path d="M25 22v4"/>
+        </g>
+        <rect x="30" y="20" width="7.5" height="8" fill="#E9A13B"/>
+      </svg>
+    </div>
+
+    <div style="display: flex; flex-direction: column; justify-content: center; gap: 26px; padding: 36px; background: #0B0C0A; border: 1px solid #2A2C26; border-radius: 3px;">
+      <div style="display: flex; align-items: center; gap: 15px;">
+        <svg width="42" height="42" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="#E7E4DA" stroke-width="3.4" stroke-linecap="square">
+            <path d="M6 15V6h9"/><path d="M33 6h9v9"/><path d="M6 33v9h9"/><path d="M42 33v9h-9"/>
+          </g>
+          <g stroke="#E7E4DA" stroke-width="3.4" stroke-linecap="square">
+            <path d="M15 20v8"/><path d="M20 14.5v19"/><path d="M25 22v4"/>
+          </g>
+          <rect x="30" y="20" width="7.5" height="8" fill="#E9A13B"/>
+        </svg>
+        <div style="font-size: 25px; font-weight: 500; letter-spacing: -0.03em; color: #F5F2E8;">screen<span style="color: #E9A13B;">2</span>prompt</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; padding: 11px 15px; background: #16180F; border: 1px solid #2A2C26; border-radius: 3px;">
+        <span style="color: #E9A13B; font-size: 13px;">&#9646;</span>
+        <span style="font-size: 13px; color: #8E8B80;">rec 00:04:12 &mdash; 3 markers</span>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 24px; background: #0B0C0A; border: 1px solid #2A2C26; border-radius: 3px;">
+      <div style="width: 100px; height: 100px; border-radius: 22px; background: #16180F; border: 1px solid #2E3128; display: flex; align-items: center; justify-content: center;">
+        <svg width="62" height="62" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="#E7E4DA" stroke-width="3.2" stroke-linecap="square">
+            <path d="M6 15V6h9"/><path d="M33 6h9v9"/><path d="M6 33v9h9"/><path d="M42 33v9h-9"/>
+          </g>
+          <g stroke="#E7E4DA" stroke-width="3.2" stroke-linecap="square">
+            <path d="M15 20v8"/><path d="M20 14.5v19"/><path d="M25 22v4"/>
+          </g>
+          <rect x="30" y="20" width="7.5" height="8" fill="#E9A13B"/>
+        </svg>
+      </div>
+      <div style="font-size: 10px; color: #6E6B62;">app icon</div>
+    </div>
+
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px;">
+    <div style="display: flex; flex-direction: column; gap: 6px; padding: 18px 22px; background: #16180F; border-left: 2px solid #E9A13B; border-radius: 3px;">
+      <div style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #E9A13B;">Why</div>
+      <div style="font-size: 12.5px; line-height: 1.6; color: #A5A298;">The corner brackets say &ldquo;capture this region&rdquo; without drawing a screen, and the amber cursor block is the marker. Nothing here could be mistaken for a consumer app.</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px; padding: 18px 22px; background: #16180F; border-left: 2px solid #4A4D42; border-radius: 3px;">
+      <div style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #8E8B80;">Tradeoff</div>
+      <div style="font-size: 12.5px; line-height: 1.6; color: #A5A298;">Fails the Maccy test on tone &mdash; it announces itself. Square caps also thicken badly at 16&thinsp;px, so the menu bar glyph needs a separate, softer drawing.</div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

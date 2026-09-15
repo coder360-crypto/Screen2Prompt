@@ -1,0 +1,12 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html",       "x": 0,    "y": 0,    "w": 1100, "h": 1720, "title": "Aperture — leading" },
+    { "file": "MenuBar.dc.html",    "x": 1200, "y": 0,    "w": 1100, "h": 800,  "title": "Menu bar at 16px" },
+    { "file": "Signal.dc.html",     "x": 1200, "y": 920,  "w": 1100, "h": 700,  "title": "Direction 2 — Signal" },
+    { "file": "Transcript.dc.html", "x": 1200, "y": 1740, "w": 1100, "h": 700,  "title": "Direction 3 — Transcript" }
+  ],
+  "annotations": [
+    { "id": "pick-one", "x": 0, "y": -170, "w": 440, "text": "Aperture is my pick — it's the only one of the three that holds up at 16px, which is where you'll actually see it all day.\n\nSignal and Transcript are real alternatives, not strawmen. Say which and I'll build it out properly." }
+  ],
+  "launch": { "view": "canvas" }
+}

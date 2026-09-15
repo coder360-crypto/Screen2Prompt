@@ -1,0 +1,9 @@
+.DS_Store
+.build/
+*.xcuserdatad/
+app/Screen2Prompt.app/
+app/tools/AppIcon.iconset/
+dist/
+probe/.build/
+probe/audio/*.wav
+probe/audio/session.raw
