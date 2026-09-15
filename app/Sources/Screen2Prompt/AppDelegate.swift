@@ -2,7 +2,7 @@ import AppKit
 import Carbon.HIToolbox
 
 @MainActor
-final class AppDelegate: NSObject, NSApplicationDelegate {
+final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private var statusItem: NSStatusItem!
     private var appearanceObs: NSKeyValueObservation?
     private var ticker: Timer?
@@ -16,7 +16,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private let resultLine = NSMenuItem(title: "", action: nil, keyEquivalent: "")
     private let copyItem   = NSMenuItem(title: "Copy cards again", action: #selector(copyPaste), keyEquivalent: "")
     private let copyFull   = NSMenuItem(title: "Copy text only", action: #selector(copyTextOnly), keyEquivalent: "")
-    private let openItem   = NSMenuItem(title: "Open last folder", action: #selector(openFolder), keyEquivalent: "")
+    private let openItem   = NSMenuItem(title: "Open sessions folder", action: #selector(openFolder), keyEquivalent: "")
+    private let recentItem = NSMenuItem(title: "Recent", action: nil, keyEquivalent: "")
+    private let recentMenu = NSMenu()
 
     func applicationDidFinishLaunching(_ note: Notification) {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -31,7 +33,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         statusLine.isEnabled = false; menu.addItem(statusLine)
         resultLine.isEnabled = false; menu.addItem(resultLine)
         menu.addItem(.separator())
-        for item in [copyItem, copyFull, openItem] { item.target = self; menu.addItem(item) }
+        for item in [copyItem, copyFull] { item.target = self; menu.addItem(item) }
+        recentMenu.delegate = self
+        recentItem.submenu = recentMenu
+        menu.addItem(recentItem)
+        openItem.target = self
+        menu.addItem(openItem)
         menu.addItem(.separator())
         let quit = NSMenuItem(title: "Quit Screen2Prompt", action: #selector(quit), keyEquivalent: "q")
         quit.target = self; menu.addItem(quit)
@@ -152,9 +159,67 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc private func copyPaste()   { session.copyForPaste();     NSSound(named: "Tink")?.play() }
     @objc private func copyTextOnly() { session.copyTextOnly(); NSSound(named: "Tink")?.play() }
+
+    // MARK: - Recent sessions
+
+    /// Past sessions, newest first. Clicking one puts its narration on the clipboard —
+    /// which is also what makes it show up in a clipboard manager like Maccy.
+    func menuNeedsUpdate(_ menu: NSMenu) {
+        guard menu === recentMenu else { return }
+        menu.removeAllItems()
+        let fm = FileManager.default
+        let dirs = ((try? fm.contentsOfDirectory(at: Session.root,
+                                                 includingPropertiesForKeys: [.contentModificationDateKey],
+                                                 options: [.skipsHiddenFiles])) ?? [])
+            .filter { (try? $0.resourceValues(forKeys: [.isDirectoryKey]).isDirectory) == true }
+            .sorted {
+                let a = (try? $0.resourceValues(forKeys: [.contentModificationDateKey]).contentModificationDate) ?? .distantPast
+                let b = (try? $1.resourceValues(forKeys: [.contentModificationDateKey]).contentModificationDate) ?? .distantPast
+                return a > b
+            }
+            .prefix(12)
+
+        guard !dirs.isEmpty else {
+            let none = NSMenuItem(title: "No sessions yet", action: nil, keyEquivalent: "")
+            none.isEnabled = false
+            menu.addItem(none)
+            return
+        }
+        for d in dirs {
+            let name = d.lastPathComponent          // 2026-09-16_04-40-57_some-title
+            let parts = name.split(separator: "_", maxSplits: 2).map(String.init)
+            let clock = parts.count > 1 ? parts[1].replacingOccurrences(of: "-", with: ":") : ""
+            let short = clock.split(separator: ":").prefix(2).joined(separator: ":")
+            var label = parts.count > 2 ? parts[2].replacingOccurrences(of: "-", with: " ") : "untitled"
+            if label.count > 46 { label = String(label.prefix(46)) + "…" }
+            let item = NSMenuItem(title: "\(short)   \(label)", action: #selector(copyRecent(_:)), keyEquivalent: "")
+            item.target = self
+            item.representedObject = d
+            menu.addItem(item)
+        }
+        menu.addItem(.separator())
+        let hint = NSMenuItem(title: "Click to copy that session's text", action: nil, keyEquivalent: "")
+        hint.isEnabled = false
+        menu.addItem(hint)
+    }
+
+    @objc private func copyRecent(_ sender: NSMenuItem) {
+        guard let dir = sender.representedObject as? URL else { return }
+        var text = (try? String(contentsOf: dir.appendingPathComponent("transcript.txt"), encoding: .utf8)) ?? ""
+        if text.isEmpty {
+            // sessions recorded before transcript.txt existed
+            text = (try? String(contentsOf: dir.appendingPathComponent("doc.md"), encoding: .utf8)) ?? ""
+        }
+        guard !text.isEmpty else { NSSound(named: "Basso")?.play(); return }
+        let pb = NSPasteboard.general
+        pb.clearContents()
+        pb.setString(text, forType: .string)
+        NSSound(named: "Tink")?.play()
+        resultLine.title = "Copied text from \(dir.lastPathComponent)"
+        refresh()
+    }
     @objc private func openFolder() {
-        if let f = session.lastFolder { NSWorkspace.shared.activateFileViewerSelecting([f]) }
-        else { NSWorkspace.shared.open(Session.root) }
+        NSWorkspace.shared.open(Session.root)
     }
     @objc private func quit() { HotKeys.shared.unregisterAll(); NSApp.terminate(nil) }
 

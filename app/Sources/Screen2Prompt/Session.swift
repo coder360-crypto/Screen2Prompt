@@ -135,6 +135,11 @@ final class Session {
         try? paste.write(to: dir.appendingPathComponent("PROMPT.md"), atomically: true, encoding: .utf8)
         try? doc.write(to: dir.appendingPathComponent("doc.md"), atomically: true, encoding: .utf8)
         try? json.write(to: dir.appendingPathComponent("session.json"))
+        // plain transcript, so the Recent menu can hand it back later without re-parsing
+        let transcript = DocBuilder.renderPlain(title: title, duration: duration,
+                                                steps: built, closing: closing)
+        try? transcript.write(to: dir.appendingPathComponent("transcript.txt"),
+                              atomically: true, encoding: .utf8)
         try? FileManager.default.removeItem(at: rawURL)      // SPEC.md §5.2
 
         // Rename the folder to carry the title, now that we know it.
